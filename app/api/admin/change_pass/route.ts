@@ -1,9 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
-// Import the shared in-memory OTP store from the send-otp route
-// NOTE: This works because both routes run in the same Node.js process.
-// For multi-instance deployments, replace with Redis or database storage.
-import { otpStore } from "@/app/api/admin/send_otp/route";
+import { otpStore } from "@/lib/otpStore";
 
 // ---- Replace this import with your actual DB/model ----
 // Example using Mongoose:  import Admin from "@/models/Admin";
