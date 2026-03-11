@@ -9,13 +9,77 @@ import TestimonialSection from "./components/Pages/home/Testimonial";
 import dbConnect from "@/lib/config/database";
 import RecentGallerySection from "./components/Pages/home/RecentGallery";
 import TravelHeroSection from "./components/Pages/home/TravelHero";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "SafarHub - Your Ultimate Travel Companion",
+  description: "Discover amazing travel experiences, stays, tours, adventures and vehicle rentals with SafarHub.",
+  alternates: {
+    canonical: "https://www.safarhub.in",
+  },
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Safar Hub",
+  "url": "https://www.safarhub.in/",
+  "logo": "https://www.safarhub.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.084a26e7.png&w=128&q=75",
+  "sameAs": [
+    "https://www.instagram.com/safarhub1",
+    "https://www.facebook.com/profile.php?id=61583838720082"
+  ],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "telephone": "7980715765",
+    "contactType": "customer service",
+    "email": "cyberspaceworksofficial@gmail.com",
+    "availableLanguage": ["en", "hi", "bn"]
+  }]
+};
+
+const travelAgencySchema = {
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "Safar Hum",
+  "image": "https://www.safarhub.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.084a26e7.png&w=128&q=75",
+  "@id": "https://www.safarhub.in/",
+  "url": "https://www.safarhub.in/",
+  "telephone": "+91 7980715765",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Krishna Chatterjee Lane, Bally",
+    "addressLocality": "Howrah, West Bengal",
+    "postalCode": "711201",
+    "addressCountry": "IN"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "sameAs": [
+    "https://www.instagram.com/safarhub1",
+    "https://www.facebook.com/profile.php?id=61583838720082"
+  ]
+};
 
 export default async function Home() {
   // Initialize database connection on page load
   await dbConnect();
   
   return (
-    <div className="w-full bg-sky-50 overflow-x-hidden ">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(travelAgencySchema) }}
+      />
+      <div className="w-full bg-sky-50 overflow-x-hidden ">
      <HeroSection/>
      <TourCategories/>
      <PopularTour/>
@@ -27,5 +91,6 @@ export default async function Home() {
      <RecentGallerySection/>
      <TravelHeroSection/>
     </div>
+    </>
   );
 }

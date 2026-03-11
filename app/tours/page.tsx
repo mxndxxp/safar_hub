@@ -1,5 +1,14 @@
 // tours/page.tsx
 import { redirect } from "next/navigation";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Tours - SafarHub",
+  description: "Discover curated tours and travel packages for your next adventure.",
+  alternates: {
+    canonical: "https://www.safarhub.in/tours",
+  },
+};
 
 type ToursPageProps = {
   searchParams?: Promise<{
