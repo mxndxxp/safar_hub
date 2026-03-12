@@ -1,16 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-
-// In-memory OTP store (use Redis/DB in production)
-// Key: "admin_otp", Value: { otp, expiresAt }
-const otpStore = new Map<string, { otp: string; expiresAt: number }>();
+import { otpStore, generateOtp, OTP_TTL_MS } from "@/lib/otpStore";
 
 const ADMIN_EMAIL = "Safarhub1@gmail.com";
-const OTP_TTL_MS = 10 * 60 * 1000; // 10 minutes
-
-function generateOtp(): string {
-  return Math.floor(100000 + Math.random() * 900000).toString();
-}
 
 export async function POST(req: NextRequest) {
   try {
@@ -82,6 +74,3 @@ export async function POST(req: NextRequest) {
     );
   }
 }
-
-// Export otpStore so the change-password route can access it
-export { otpStore };

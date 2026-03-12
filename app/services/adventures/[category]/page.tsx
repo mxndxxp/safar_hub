@@ -7,7 +7,7 @@ const VALID_CATEGORIES = ADVENTURE_CATEGORIES.map((tab) => tab.value);
 export default async function ServicesAdventuresCategoryPage({ params }: { params: Promise<{ category: AdventureCategoryValue }> }) {
   const resolvedParams = await params;
   const category = VALID_CATEGORIES.includes(resolvedParams.category as any) ? resolvedParams.category : "all";
-  return <AdventuresExplorer category={category} />;
+  return <AdventuresExplorer initialCategory={category} />;
 }
 
 

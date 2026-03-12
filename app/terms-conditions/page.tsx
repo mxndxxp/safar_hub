@@ -1,3 +1,13 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms & Conditions - SafarHub",
+  description: "Read our terms and conditions to understand the rules and regulations for using SafarHub services.",
+  alternates: {
+    canonical: "https://www.safarhub.in/terms-conditions",
+  },
+};
+
 export default function TermsConditionsPage() {
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">

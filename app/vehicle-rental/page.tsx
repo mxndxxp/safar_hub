@@ -1,5 +1,14 @@
 // app/vehicle-rental/page.tsx
 import VehicleRentalExplorer from "./vehiclerentalExplorer";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Vehicle Rental - SafarHub",
+  description: "Rent cars, bikes, or hire a car with driver for your travel needs.",
+  alternates: {
+    canonical: "https://www.safarhub.in/vehicle-rental",
+  },
+};
 
 type VehicleRentalHomePageProps = {
   searchParams?: Promise<{

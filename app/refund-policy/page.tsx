@@ -1,3 +1,13 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Refund Policy - SafarHub",
+  description: "Read our refund policy to understand the terms and conditions for refunds on bookings.",
+  alternates: {
+    canonical: "https://www.safarhub.in/refund-policy",
+  },
+};
+
 export default function RefundPolicyPage() {
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">

@@ -2,14 +2,26 @@ import mongoose from "mongoose";
 
 const MONGODB_URI = process.env.MONGODB_URI as string;
 
-if (!MONGODB_URI) {
+// Only throw at runtime, not during static analysis/build
+if (!MONGODB_URI && typeof window !== 'undefined') {
   throw new Error("Please define MONGODB_URI in environment variables");
+}
+
+// For build time, return early without throwing to prevent build failures
+if (!MONGODB_URI) {
+  console.warn("⚠️ MONGODB_URI not defined - database connection will not be available at build time");
 }
 
 let connectionPromise: Promise<void | mongoose.Connection> | null = null;
 let isInitialized = false;
 
 export default async function dbConnect() {
+  // Return early if MongoDB URI is not configured
+  if (!MONGODB_URI) {
+    console.warn("⚠️ dbConnect: MONGODB_URI not configured, skipping connection");
+    return;
+  }
+  
   // Already connected
   if (mongoose.connection.readyState === 1) {
     console.log("✅ Using existing MongoDB connection");

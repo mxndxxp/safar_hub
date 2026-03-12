@@ -1,5 +1,14 @@
 // app/adventures/page.tsx
 import { redirect } from "next/navigation";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Adventures - SafarHub",
+  description: "Experience thrilling adventures including trekking, hiking, camping, and water rafting.",
+  alternates: {
+    canonical: "https://www.safarhub.in/adventures",
+  },
+};
 
 type AdventuresPageProps = {
   searchParams?: Promise<{
