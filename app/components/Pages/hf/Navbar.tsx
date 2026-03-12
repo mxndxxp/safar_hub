@@ -173,10 +173,10 @@ const Navbar: React.FC = () => {
       href: "/adventures",
       icon: <FaMountain />,
       subServices: [
-        { name: "Trekking", href: "/adventures?category=trekking", icon: <FaRoute /> },
-        { name: "Hiking", href: "/adventures?category=hiking", icon: <FaHiking /> },
-        { name: "Camping", href: "/adventures?category=camping", icon: <FaCampground /> },
-        { name: "Water Rafting", href: "/adventures?category=water-rafting", icon: <FaShip /> },
+        { name: "Trekking", href: "/adventures/trekking", icon: <FaRoute /> },
+        { name: "Hiking", href: "/adventures/hiking", icon: <FaHiking /> },
+        { name: "Camping", href: "/adventures/camping", icon: <FaCampground /> },
+        { name: "Water Rafting", href: "/adventures/water-rafting", icon: <FaShip /> },
       ],
     },
     {

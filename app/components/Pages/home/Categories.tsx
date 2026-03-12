@@ -33,10 +33,10 @@ const tours: CategoryCard[] = [
   { title: "Group Tours", icon: FaUsers, href: "/tours/group-tours" },
   { title: "Tour Packages", icon: FaSuitcaseRolling, href: "/tours/tour-packages" },
 ];const tour2s: CategoryCard[] = [
-  { title: "Trekking", icon: FaRoute, href: "/adventures?category=trekking" },
-  { title: "Hiking", icon: FaHiking, href: "/adventures?category=hiking" },
-  { title: "Camping", icon: FaCampground, href: "/adventures?category=camping" },
-  { title: "Water Rafting", icon: FaShip, href: "/adventures?category=water-rafting" },
+  { title: "Trekking", icon: FaRoute, href: "/adventures/trekking" },
+  { title: "Hiking", icon: FaHiking, href: "/adventures/hiking" },
+  { title: "Camping", icon: FaCampground, href: "/adventures/camping" },
+  { title: "Water Rafting", icon: FaShip, href: "/adventures/water-rafting" },
   { title: "Cars", icon: FaCarSide, href: "/vehicle-rental/cars" },
   { title: "Bikes", icon: FaBiking, href: "/vehicle-rental/bikes" },
 ];

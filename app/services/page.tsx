@@ -68,10 +68,10 @@ const services = [
     iconBg: "bg-orange-100 text-orange-600",
     icon: <FaMountain className="text-2xl" />,
     subServices: [
-      { label: "Trekking", href: "/adventures?category=trekking", icon: <FaHiking /> },
-      { label: "Hiking", href: "/adventures?category=hiking", icon: <FaRoute /> },
-      { label: "Camping", href: "/adventures?category=camping", icon: <TbTent /> },
-      { label: "Water Rafting", href: "/adventures?category=water-rafting", icon: <FaWater /> },
+      { label: "Trekking", href: "/adventures/trekking", icon: <FaHiking /> },
+      { label: "Hiking", href: "/adventures/hiking", icon: <FaRoute /> },
+      { label: "Camping", href: "/adventures/camping", icon: <TbTent /> },
+      { label: "Water Rafting", href: "/adventures/water-rafting", icon: <FaWater /> },
     ],
   },
   {
